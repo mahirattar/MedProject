@@ -1,0 +1,103 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+            <label class="col-md-4">Nom</label>
+            <input type="text" class="form-control" 
+              formControlName="UtilisateurNom" 
+              #UtilisateurNom
+              [(ngModel)] = "utilisateur.UtilisateurNom"
+              />
+          </div>
+          <div *ngIf="angForm.controls['UtilisateurNom'].invalid && (angForm.controls['UtilisateurNom'].dirty || angForm.controls['UtilisateurNom'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['UtilisateurNom'].errors.required">
+              Nom is required.
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-md-4">Prénom</label>
+              <input type="text" class="form-control" 
+                formControlName="UtilisateurPrenom" 
+                #UtilisateurPrenom
+                [(ngModel)] = "utilisateur.UtilisateurPrenom"
+                />
+            </div>
+            <div *ngIf="angForm.controls['UtilisateurPrenom'].invalid && (angForm.controls['UtilisateurPrenom'].dirty || angForm.controls['UtilisateurPrenom'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['UtilisateurPrenom'].errors.required">
+                Prénom is required.
+              </div>
+            </div>
+      <div class="form-group">
+        <label class="col-md-4">Mail</label>
+        <input type="text" class="form-control" 
+          formControlName="UtilisateurMail" 
+          #UtilisateurMail 
+          [(ngModel)] = "utilisateur.UtilisateurMail"
+          />
+      </div>
+      <div *ngIf="angForm.controls['UtilisateurMail'].invalid && (angForm.controls['UtilisateurMail'].dirty || angForm.controls['UtilisateurMail'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['UtilisateurMail'].errors.required">
+          Mail is required.
+        </div>
+      </div>
+      <div class="form-group">
+          <label class="col-md-4">Age</label>
+          <input type="text" class="form-control" 
+            formControlName="UtilisateurAge" 
+            #UtilisateurAge 
+            [(ngModel)] = "utilisateur.UtilisateurAge"
+            />
+        </div>
+        <div *ngIf="angForm.controls['UtilisateurAge'].invalid && (angForm.controls['UtilisateurAge'].dirty || angForm.controls['UtilisateurAge'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['UtilisateurAge'].errors.required">
+            Age is required.
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">Taille</label>
+            <input type="text" class="form-control" 
+              formControlName="UtilisateurTaille" 
+              #UtilisateurTaille 
+              [(ngModel)] = "utilisateur.UtilisateurTaille"
+              />
+          </div>
+          <div *ngIf="angForm.controls['UtilisateurTaille'].invalid && (angForm.controls['UtilisateurTaille'].dirty || angForm.controls['UtilisateurTaille'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['UtilisateurTaille'].errors.required">
+              Taille is required.
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="col-md-4">Poid</label>
+              <input type="text" class="form-control" 
+                formControlName="UtilisateurPoid" 
+                #UtilisateurPoid 
+                [(ngModel)] = "utilisateur.UtilisateurPoid"
+                />
+            </div>
+            <div *ngIf="angForm.controls['UtilisateurPoid'].invalid && (angForm.controls['UtilisateurPoid'].dirty || angForm.controls['UtilisateurPoid'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['UtilisateurPoid'].errors.required">
+                Poid is required.
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Gnere</label>
+                <input type="text" class="form-control" 
+                  formControlName="UtilisateurGenre" 
+                  #UtilisateurGenre 
+                  [(ngModel)] = "utilisateur.UtilisateurGenre"
+                  />
+              </div>
+              <div *ngIf="angForm.controls['UtilisateurGenre'].invalid && (angForm.controls['UtilisateurGenre'].dirty || angForm.controls['UtilisateurGenre'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['UtilisateurGenre'].errors.required">
+                  Gnere is required.
+                </div>
+              </div>
+      <div class="form-group">
+        <button (click) = "updateUtilisateur(UtilisateurNom.value, UtilisateurPrenom.value, UtilisateurMail.value, UtilisateurAge.value, UtilisateurTaille.value, UtilisateurPoid.value, UtilisateurGenre.value)" type="submit" class="btn btn-primary"
+        [disabled]="angForm.invalid" >
+          Modifié Utilisateur
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

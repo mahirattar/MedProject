@@ -1,21 +1,37 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ProductAddComponent } from './product-add/product-add.component';
-import { ProductEditComponent } from './product-edit/product-edit.component';
-import { ProductGetComponent } from './product-get/product-get.component';
+import { UtilisateurAddComponent } from './Utilisateur-add/Utilisateur-add.component';
+import { UtilisateurEditComponent } from './Utilisateur-edit/Utilisateur-edit.component';
+import { UtilisateurGetComponent } from './Utilisateur-get/Utilisateur-get.component';
+import { LoginComponent } from './Devlopper-login/Devlopper-login.component';
+import { AlimentsAddComponent } from './Aliments-add/Aliments-add.component';
+import { AlimentsEditComponent } from './Aliments-edit/Aliments-edit.component';
+
 
 const routes: Routes = [
   {
-    path: 'product/create',
-    component: ProductAddComponent
+    path: 'utilisateur/create',
+    component: UtilisateurAddComponent
   },
   {
     path: 'edit/:id',
-    component: ProductEditComponent
+    component: UtilisateurEditComponent
   },
   {
-    path: 'products',
-    component: ProductGetComponent
+    path: 'utilisateurs',
+    component: UtilisateurGetComponent
+  },
+  {
+    path: 'Devlopper/login',
+    component: LoginComponent
+  },
+  {
+    path: 'Aliments/add',
+    component: AlimentsAddComponent
+  },
+  {
+    path: 'Aliments/edit',
+    component: AlimentsEditComponent
   }
 ];
 

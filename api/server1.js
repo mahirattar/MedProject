@@ -5,7 +5,7 @@ const express = require('express'),
     mongoose = require('mongoose'),
     config = require('./DB');
 
-   const utilisateurRoute = require('./routes/utilisateur.route');
+   const alimentRoutes = require('./routes/aliment.route');
     mongoose.Promise = global.Promise;
     mongoose.connect(config.DB, { useNewUrlParser: true }).then(
       () => {console.log('Your Database is connected') },
@@ -15,7 +15,7 @@ const express = require('express'),
     const app = express();
     app.use(bodyParser.json());
     app.use(cors());
-    app.use('/utilisateurs', utilisateurRoute);
+    app.use('/Aliments', alimentRoutes);
     const port = process.env.PORT || 4000;
 
     const server = app.listen(port, function(){
